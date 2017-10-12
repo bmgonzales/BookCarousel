@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+
+<head>
+
+	<title>New Book Carousel</title>
+
+	<!--[if lt IE 9]>
+     		<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+<style type="text/css"  media="screen">
+
+
+
+
+ html {overflow-x: hidden}
+  body {margin:0; padding:0; background:#fff; overflow-x: hidden}
+  div.carouselWrapper {width:550px; height:470px;overflow:hidden;position:relative;}
+  div#bookcaption {position:absolute;top:450px; width:400px;text-align:center; font-weight:bold; font-size:110%; z-index:150;visibility:hidden}
+  .tooltip {
+	display:none;
+	font-size:12px;
+	height:70px;
+	width:160px;
+	padding:25px;
+	color:#fff;	
+}
+  div#rotatebuttons {position:absolute;top:400px; left:210px; z-index:200; color:#222;  width:430px;}
+  #rotatebuttons  img:focus {   border: none;}
+  #rotatebuttons p {padding:0; margin:0; }
+  #rotatebuttons a {text-decoration:none; display:block}
+  #rotateleft-button { cursor:pointer; float:left; border:0; padding:0; height:40px; width:40px; background:url('left-arrow.png') repeat scroll 0 0 }
+  #rotateright-button { cursor:pointer; float:left; margin-left:5px; margin-right:5px;border:0; padding:0; height:40px; width:40px; background:url('right-arrow.png') repeat scroll 0 0}
+  #rotateleft-button:hover {background-position: 0px 41px}
+  #rotateright-button:hover {background-position: 0px 41px}
+  #last_update {position:absolute; left:120px; top:492px; font-size:11px; color:#aaa}
+  
+  
+</style>
+<script src="https://code.jquery.com/jquery-1.7.2.min.js" integrity="sha256-R7aNzoy2gFrVs+pNJ6+SokH04ppcEqJ0yFLkNGoFALQ="
+crossorigin="anonymous"></script>
+
+
+</script>
+<script src="mousewheel.js" type="text/javascript"></script>
+
+	<script src="carousel.js" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+function isTouchDevice() {
+   var el = document.createElement('div');
+   el.setAttribute('ongesturestart', 'return;');
+   return typeof el.ongesturestart === "function";
+}
+
+jQuery(document).ready(function() {
+	
+		if (isTouchDevice()) {
+		// If touch device then reduce to last six covers, displayed normally
+			$("#carousel1").prepend("<p style='width:470px; margin-bottom:20px'>It looks like you're on a touch-screen device. Sorry, but our book carousel isn't working yet on these so we've shown the book covers in a plain fashion instead.</p>").css('height','510px');
+			$("#carousel_instructions").remove();
+			$("#carousel1 .booklink:lt(6)").remove();
+			$("#carousel1 .booklink img").css({"margin-right":"25px",
+			"padding-bottom":"20px"});
+		} else {
+			$("#carousel1").CloudCarousel(		
+			{			
+				xPos: 250,
+				yPos: 70,
+				buttonLeft: $("#rotateleft-button"),
+				buttonRight: $("#rotateright-button"),
+				altBox: $("#alt-text"),
+				titleBox: $("#bookcaption"),
+				mouseWheel: true,
+				reflHeight:40,
+				xRadius:240,
+				yRadius:120
+			}
+		);
+		}
+			
+		});
+
+</script>
+<!--/sphider_noindex--> 
+</head>
+<body>
+
+ <div id = "carousel1" class='carouselWrapper'>            
+            <!-- All images with class of "cloudcarousel" will be turned into carousel items -->
+            <!-- You can place links around these images -->
+                        
+        <a class="booklink" href="https://lady.sirsi.net/uhtbin/cgisirsi/x/0/0/57/5/3?searchdata1=231581{CKEY}&searchfield1=GENERAL^SUBJECT^GENERAL^^&user_id=WEBSERVER" target="_blank">
+			<img class="cloudcarousel" src="https://secure.syndetics.com/index.aspx?isbn=9780199332243/MC.GIF&client=lakeollusa" title="We Are Better Than This: How Government Should Spend Our Money"></a>
+			
+			<a class="booklink" href="https://lady.sirsi.net/uhtbin/cgisirsi/x/0/0/57/5/3?searchdata1=231503{CKEY}&searchfield1=GENERAL^SUBJECT^GENERAL^^&user_id=WEBSERVER" target="_blank">
+			<img class="cloudcarousel" src="https://secure.syndetics.com/index.aspx?isbn=9781622097975/MC.GIF&client=lakeollusa" title="They Rode On: Blood Meridian and the Tragedy of the American West"></a>
+			
+			<a class="booklink" href="https://lady.sirsi.net/uhtbin/cgisirsi/x/0/0/57/5/3?searchdata1=231771{CKEY}&searchfield1=GENERAL^SUBJECT^GENERAL^^&user_id=WEBSERVER" target="_blank">
+			<img class="cloudcarousel" src="https://secure.syndetics.com/index.aspx?isbn=0567030482/MC.GIF&client=lakeollusa" title="The Theology of Death"></a>
+			
+			<a class="booklink" href="https://lady.sirsi.net/uhtbin/cgisirsi/x/0/0/57/5/3?searchdata1=231580{CKEY}&searchfield1=GENERAL^SUBJECT^GENERAL^^&user_id=WEBSERVER" target="_blank">
+			<img class="cloudcarousel" src="https://secure.syndetics.com/index.aspx?isbn=9780199759989/MC.GIF&client=lakeollusa" title="The Smell of Battle, the Taste of Siege: A Sensory History of the Civil War"></a>
+			
+			<a class="booklink" href="https://lady.sirsi.net/uhtbin/cgisirsi/x/0/0/57/5/3?searchdata1=231511{CKEY}&searchfield1=GENERAL^SUBJECT^GENERAL^^&user_id=WEBSERVER" target="_blank">
+			<img class="cloudcarousel" src="https://secure.syndetics.com/index.aspx?isbn=0521482488/MC.GIF&client=lakeollusa" title="Sign Language and Linguistic Universals" ></a>
+			
+			<a class="booklink" href="https://lady.sirsi.net/uhtbin/cgisirsi/x/0/0/57/5/3?searchdata1=231618{CKEY}&searchfield1=GENERAL^SUBJECT^GENERAL^^&user_id=WEBSERVER" target="_blank">
+			<img class="cloudcarousel" src="https://secure.syndetics.com/index.aspx?isbn=9780544251793/MC.GIF&client=lakeollusa" title="@WAR: The Rise of the Military-Internet Complex"></a>
+			
+			<a class="booklink" href="https://lady.sirsi.net/uhtbin/cgisirsi/x/0/0/57/5/3?searchdata1=231576{CKEY}&searchfield1=GENERAL^SUBJECT^GENERAL^^&user_id=WEBSERVER" target="_blank">
+			<img class="cloudcarousel" src="https://secure.syndetics.com/index.aspx?isbn=9780873282598/MC.GIF&client=lakeollusa" title="Samuel Johnson: New Contexts For a New Century"></a>
+			
+			<a class="booklink" href="https://lady.sirsi.net/uhtbin/cgisirsi/x/0/0/57/5/3?searchdata1=231577{CKEY}&searchfield1=GENERAL^SUBJECT^GENERAL^^&user_id=WEBSERVER" target="_blank">
+			<img class="cloudcarousel" src="https://secure.syndetics.com/index.aspx?isbn=9780226116495/MC.GIF&client=lakeollusa" title="Scientific Style and Format: The CSE Manual for Authors, Editors and Publishers"></a>
+			
+			<a class="booklink" href="https://lady.sirsi.net/uhtbin/cgisirsi/x/0/0/57/5/3?searchdata1=231616{CKEY}&searchfield1=GENERAL^SUBJECT^GENERAL^^&user_id=WEBSERVER" target="_blank">
+			<img class="cloudcarousel" src="https://secure.syndetics.com/index.aspx?isbn=0670025852/MC.GIF&client=lakeollusa" title="The Sense of Style: The Thinking Person's Guide to Writing in the 21st Century"></a>
+			
+			<a class="booklink" href="https://lady.sirsi.net/uhtbin/cgisirsi/x/0/0/57/5/3?searchdata1=231558{CKEY}&searchfield1=GENERAL^SUBJECT^GENERAL^^&user_id=WEBSERVER" target="_blank">
+			<img class="cloudcarousel" src="https://secure.syndetics.com/index.aspx?isbn=9781479823178/MC.GIF&client=lakeollusa" title="Against Wind and Tide: The African American Struggle Against the Colonization Movement"></a>
+			
+			<a class="booklink" href="https://lady.sirsi.net/uhtbin/cgisirsi/x/0/0/57/5/3?searchdata1=231519{CKEY}&searchfield1=GENERAL^SUBJECT^GENERAL^^&user_id=WEBSERVER" target="_blank"><img class="cloudcarousel" src="https://secure.syndetics.com/index.aspx?isbn=3642414931/MC.GIF&client=lakeollusa" title="Animal Communication and Noise"></a>
+			
+			<a class="booklink" href="https://lady.sirsi.net/uhtbin/cgisirsi/x/0/0/57/5/3?searchdata1=231524{CKEY}&searchfield1=GENERAL^SUBJECT^GENERAL^^&user_id=WEBSERVER" target="_blank"><img class="cloudcarousel" src="https://secure.syndetics.com/index.aspx?isbn=0521829186/MC.GIF&client=lakeollusa" title="Behaviour and Neurodynamics for Auditory Communication"></a>
+         
+			
+            </div>
+	<div id="carousel_instructions">
+	    <div id='rotatebuttons'><img id='rotateleft-button' src='left-arrow.png' alt='Rotate Left' title='Rotate anti-clockwise'/><img id='rotateright-button' src='right-arrow.png' alt='Rotate Right' title='Rotate clockwise'/></div>
+	</div>
+
+</body>
+</html> 
+
